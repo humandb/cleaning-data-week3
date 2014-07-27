@@ -1,4 +1,7 @@
 data
 *.Rproj
 .Rproj.user
+.RData
+.Rhistory
 .DS_Store
+output.txt
