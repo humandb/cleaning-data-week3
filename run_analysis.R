@@ -30,3 +30,9 @@ names(mergeSet2) <- c(grep("(mean|std)", features[[2]], value=T), "subject_id", 
 
 activity_labels <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
 mergeSet2 <- cbind(mergeSet2, sapply(mergeSet2$activity_id, function(x){ toString(activity_labels[x, 2]) }))
+
+## Add a proper name to the last column
+names(mergeSet2)[length(names(mergeSet2))] = "activity_label"
+
+## Write data frame to txt file (to hand in assigment)
+write.file(mergeSet2, "output.txt")
